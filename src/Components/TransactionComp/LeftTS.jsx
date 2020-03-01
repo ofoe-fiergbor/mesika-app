@@ -7,10 +7,10 @@ export class LeftTS extends Component {
             <div className="DBleft">
                 <ul>
                     <li id='dbfirstChild'><h3>TRANSACTIONS</h3></li>
-                    <Link to='/expensetransaction' id='leftDBLi'>
+                    <Link to='/expenseTransaction' id='leftDBLi'>
                         <li>Expenses</li>
                     </Link>
-                    <Link to='/revenuetransaction' id='leftDBLi'>
+                    <Link to='/transactions' id='leftDBLi'>
                         <li>Revenue</li>
                     </Link>
                     <Link to='/bankLodgment' id='leftDBLi'>

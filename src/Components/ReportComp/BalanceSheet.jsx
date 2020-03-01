@@ -4,7 +4,7 @@ export class BalanceSheet extends Component {
     render() {
         return (
             <div className='right'>
-                <center><h1>Balace Sheet</h1></center>
+                <center><h1>Balance Sheet</h1></center>
             </div>
         )
     }

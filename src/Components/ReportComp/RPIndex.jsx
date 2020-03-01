@@ -13,7 +13,7 @@ export class RPIndex extends Component {
                 </div>
                 <div className="col-md-9">
                     <Switch>
-                        <Route path='/incomeStatement' component={IncomeStatement} />
+                        <Route path='/reports' component={IncomeStatement} />
                         <Route path='/balanceSheet' component={BalanceSheet} />
                     </Switch>
                 </div>

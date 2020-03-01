@@ -7,8 +7,8 @@ export class LeftRP extends Component {
         return (
             <div className="DBleft">
                 <ul>
-                    <li id='dbfirstChild'><h3>TRANSACTIONS</h3></li>
-                    <Link to='/incomeStatement' id='leftDBLi'>
+                    <li id='dbfirstChild'><h3>REPORTS</h3></li>
+                    <Link to='/reports' id='leftDBLi'>
                         <li>Income Statement</li>
                     </Link>
                     <Link to='/balanceSheet' id='leftDBLi'>

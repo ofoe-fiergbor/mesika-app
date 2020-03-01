@@ -1,3 +1,7 @@
+// variables
+  $darkBlue: rgb(3, 3, 63);
+  $orangeHover: orange;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,7 +19,7 @@ code {
 }
 
 .navbar {
-  background-color: rgb(3, 3, 63);
+  background-color: $darkBlue;
   border: none;
   border-radius: 0;
   padding-right: 5em;
@@ -42,14 +46,14 @@ code {
 }
 
 .nav #li:hover {
-  background-color: orange;
+  background-color: $orangeHover;
   color: black;
   font-weight: bold;
   text-decoration: none;
 }
 
 .nav #li:focus {
-  background-color: orange;
+  background-color: $orangeHover;
   color: black;
   font-weight: bold;
   text-decoration: none;
@@ -57,7 +61,7 @@ code {
 }
 
 .nav #li:active {
-  background-color: orange;
+  background-color: $orangeHover;
   color: black;
   font-weight: bold;
 }
@@ -84,7 +88,7 @@ code {
 
 #dbfirstChild {
   // background-color: rgb(233, 213, 213);
-  background-color: orange;
+  background-color: $orangeHover;
   color: black;
   height: 4.5em;
 }
@@ -138,4 +142,38 @@ box-shadow: 3px 6px 26px -10px rgba(0,0,0,0.44);
   -webkit-box-shadow: 3px 6px 26px -10px rgba(0,0,0,0.44);
 -moz-box-shadow: 3px 6px 26px -10px rgba(0,0,0,0.44);
 box-shadow: 3px 6px 26px -10px rgba(0,0,0,0.44);
+}
+.post{
+  width: 7em;
+  background-color: $darkBlue;
+  color: white;
+  font-weight: 500;
+}
+.post:active{
+  background-color: $orangeHover;
+  color: black;
+  font-weight: 500;
+
+}
+
+.post:hover{
+  background-color: $orangeHover;
+  color: black;
+  font-weight: 500;
+}
+.tableRow{
+  width: 100%;
+  padding-left: 1rem;
+}
+.report{
+  padding-top: 0.6em;
+  background-color:$orangeHover;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  justify-content: space-around;
+}
+.reportTable{
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 3em;
 }

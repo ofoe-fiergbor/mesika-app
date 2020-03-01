@@ -14,8 +14,8 @@ export class TRIndex extends Component {
                 </div>
                 <div className="col-md-7">
                     <Switch>
-                        <Route path='/expensetransaction' component={TRExpenses}/>
-                        <Route path='/revenuetransaction' component={TRRevenue}/>
+                        <Route path='/expenseTransaction' component={TRExpenses}/>
+                        <Route path='/transactions' component={TRRevenue}/>
                         <Route path='/bankLodgment' component={TRBankLodgment}/>
                     </Switch>
 
