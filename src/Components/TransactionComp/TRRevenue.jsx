@@ -18,9 +18,9 @@ export class TRRevenue extends Component {
                                 </div>
                             </div>
                             <div className="col-md-6">
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label>Mode of Payment</label>
-                                    <select class="form-control" required>
+                                    <select className="form-control" required>
                                         <option>Cash Payment</option>
                                         <option>Cheque Payment</option>
                                         <option>Bank Transfer</option>
@@ -32,9 +32,9 @@ export class TRRevenue extends Component {
                         <div className="row">
                             <div className="col-md-1"></div>
                             <div className="col-md-3">
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label>Product</label>
-                                    <input list='products' class="form-control" required placeholder='Product Classificaiton' />
+                                    <input list='products' className="form-control" required placeholder='Product Classificaiton' />
                                     <datalist id='products'>
                                         <option>Iphone 7</option>
                                         <option>Iphone 7 Case</option>
@@ -99,7 +99,7 @@ export class TRRevenue extends Component {
                 <hr />
 
                 <div className="row tableRow">
-                    <table class="table table-striped" >
+                    <table className="table table-striped" >
                         <caption>Revenue</caption>
                         <thead>
                             <tr>
