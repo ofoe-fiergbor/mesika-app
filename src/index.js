@@ -9,7 +9,6 @@ import reducers from './Redux/Reducers/reducers'
 
 const store =createStore(reducers)
 
-console.log(store.getState())
 
 ReactDOM.render(
 <Provider store={store}><App /></Provider>

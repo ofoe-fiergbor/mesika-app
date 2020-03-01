@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
 
 export class TRExpenses extends Component {
     render() {
@@ -18,10 +20,11 @@ export class TRExpenses extends Component {
                                 </div>
                             </div>
                             <div className="col-md-6">
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label>Mode of Payment</label>
-                                    <select class="form-control" required>
+                                    <select className="form-control" required>
                                         <option>Cash-In-Hand</option>
+                                        <option>Cheque Payment</option>
                                         <option>Bank Transfer</option>
                                     </select>
                                 </div>
@@ -37,9 +40,9 @@ export class TRExpenses extends Component {
                                 </div>
                             </div>
                             <div className="col-md-6">
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label>Category</label>
-                                    <input list='expense-categories' class="form-control" required placeholder='Expense Classificaiton'/>
+                                    <input list='expense-categories' className="form-control" required placeholder='Expense Classificaiton' />
                                     <datalist id='expense-categories'>
                                         <option>Advertising & Promotion</option>
                                         <option>Agency & Labour Cost</option>
@@ -100,34 +103,22 @@ export class TRExpenses extends Component {
                             </tr>
                         </thead>
                         <tbody >
-                            <tr>
-                                <td>Jan 1,2020</td>
-                                <td>2xx89</td>
-                                <td>Transport to Bank</td>
-                                <td>Uber Ghana</td>
-                                <td>Transport & Travel</td>
-                                <td>Cash-In-Hand</td>
-                                <td>80.00</td>
-                            </tr>
-                            <tr>
-                                <td>Jan 1,2020</td>
-                                <td>2xx59</td>
-                                <td>Lunch for Guest</td>
-                                <td>Baritas</td>
-                                <td>Advertising & Promotion</td>
-                                <td>Cash-In-Hand</td>
-                                <td>70.00</td>
-                            </tr>
-                            <tr>
-                                <td>Jan 3,2020</td>
-                                <td>2xx65</td>
-                                <td>Electrity Bill</td>
-                                <td>PDS</td>
-                                <td>Electricity</td>
-                                <td>Bank Payment</td>
-                                <td>800.00</td>
-                            </tr>
-                            
+                            {
+                                this.props.expenses.map(expense=> {
+                                    return (
+                                        <tr key={expense.id}>
+                                            <td>{expense.date}</td>
+                                            <td>{expense.id}</td>
+                                            <td>{expense.description}</td>
+                                            <td>{expense.vendor}</td>
+                                            <td>{expense.category}</td>
+                                            <td>{expense.paymentMethod}</td>
+                                            <td className='text-center'>{expense.amount}.00</td>
+                                        </tr>
+                                    )
+                                })
+                            }
+
                         </tbody>
                     </table>
                 </div>
@@ -136,4 +127,11 @@ export class TRExpenses extends Component {
     }
 }
 
-export default TRExpenses
+const mapStateToProps = (state) => {
+    console.log(state.expenseTransaction)
+    return {
+        expenses: state.expenseTransaction
+    }
+}
+
+export default connect(mapStateToProps, null)(TRExpenses)
