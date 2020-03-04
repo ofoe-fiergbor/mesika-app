@@ -130,7 +130,7 @@ export class TRExpenses extends Component {
                                             <td>{expense.expVendor}</td>
                                             <td>{expense.expCategory}</td>
                                             <td>{expense.paymentMode}</td>
-                                            <td className='text-center'>{expense.expAmount}.00</td>
+                                            <td className='text-center'>{expense.expAmount}</td>
                                         </tr>
                                     )
                                 })
