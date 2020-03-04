@@ -1,28 +1,45 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import {addExpense} from '../../Redux/Actions/ExpenseTranAction'
+
 
 
 export class TRExpenses extends Component {
+
+    handleAddExpense= e =>{
+        e.preventDefault()
+        let expense = {
+            id: Math.random().toString(36).substr(2, 5),
+            expDate:e.target.elements.expDate.value,
+            paymentMode:e.target.elements.paymentMode.value,
+            expAmount:e.target.elements.expAmount.value,
+            expCategory:e.target.elements.expCategory.value,
+            expTranDetails:e.target.elements.expTranDetails.value,
+            expVendor:e.target.elements.expVendor.value,
+        }
+        console.log(expense)
+        this.props.addExpense(expense)
+
+    }
     render() {
         return (
             <div className='right container'>
                 <h2>Add Expenses</h2>
                 <hr />
                 <div className="row ">
-                    <form>
-
+                    <form onSubmit={this.handleAddExpense}>
                         <div className="row">
                             <div className="col-md-1"></div>
                             <div className="col-md-3">
                                 <div className="form-group">
                                     <label>Date</label>
-                                    <input type="date" className="form-control" placeholder="Date" required />
+                                    <input type="date" className="form-control" name='expDate' placeholder="Date" required />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-group">
                                     <label>Mode of Payment</label>
-                                    <select className="form-control" required>
+                                    <select className="form-control" name='paymentMode' required>
                                         <option>Cash-In-Hand</option>
                                         <option>Cheque Payment</option>
                                         <option>Bank Transfer</option>
@@ -36,13 +53,13 @@ export class TRExpenses extends Component {
                             <div className="col-md-3">
                                 <div className="form-group">
                                     <label>Amount(GHS)</label>
-                                    <input type="number" min="0.00" max="100000.00" step="0.01" className="form-control" placeholder="Amount" required />
+                                    <input type="number" max="1000000.00" step="0.01" className="form-control" name='expAmount' placeholder="Amount" required />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-group">
                                     <label>Category</label>
-                                    <input list='expense-categories' className="form-control" required placeholder='Expense Classificaiton' />
+                                    <input list='expense-categories' className="form-control" name='expCategory' required placeholder='Expense Classificaiton' />
                                     <datalist id='expense-categories'>
                                         <option>Advertising & Promotion</option>
                                         <option>Agency & Labour Cost</option>
@@ -72,12 +89,12 @@ export class TRExpenses extends Component {
                             <div className="col-md-7">
                                 <div className="form-group">
                                     <label>Description</label>
-                                    <input type="text" className="form-control" placeholder="Enter Transaction Details" required />
+                                    <input type="text" className="form-control" name='expTranDetails' placeholder="Enter Transaction Details" required />
                                 </div>
                             </div><div className="col-md-2">
                                 <div className="form-group">
                                     <label>Vender/Other Tags</label>
-                                    <input type="text" className="form-control" placeholder="Vendor/Other Tags" required />
+                                    <input type="text" className="form-control" name='expVendor' placeholder="Vendor/Other Tags" required />
                                 </div>
                             </div>
                             <div className="col-md-2"></div>
@@ -107,13 +124,13 @@ export class TRExpenses extends Component {
                                 this.props.expenses.map(expense=> {
                                     return (
                                         <tr key={expense.id}>
-                                            <td>{expense.date}</td>
-                                            <td>{expense.id}</td>
-                                            <td>{expense.description}</td>
-                                            <td>{expense.vendor}</td>
-                                            <td>{expense.category}</td>
-                                            <td>{expense.paymentMethod}</td>
-                                            <td className='text-center'>{expense.amount}.00</td>
+                                            <td>{expense.expDate}</td>
+                                            <td className='id'>{expense.id}</td>
+                                            <td>{expense.expTranDetails}</td>
+                                            <td>{expense.expVendor}</td>
+                                            <td>{expense.expCategory}</td>
+                                            <td>{expense.paymentMode}</td>
+                                            <td className='text-center'>{expense.expAmount}.00</td>
                                         </tr>
                                     )
                                 })
@@ -128,10 +145,9 @@ export class TRExpenses extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.expenseTransaction)
     return {
         expenses: state.expenseTransaction
     }
 }
 
-export default connect(mapStateToProps, null)(TRExpenses)
+export default connect(mapStateToProps,{addExpense})(TRExpenses)
