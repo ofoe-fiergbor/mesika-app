@@ -2,9 +2,9 @@ export const ADD_REVENUE = 'ADD_REVENUE'
 
 
 
-export const addRevenue = (revenue)=>{
+export const addRevenue = (sale)=>{
     return{
         type:'ADD_REVENUE',
-        payload: revenue
+        payload: sale
     }
 }

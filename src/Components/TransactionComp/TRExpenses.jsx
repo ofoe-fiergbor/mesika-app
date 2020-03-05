@@ -17,7 +17,6 @@ export class TRExpenses extends Component {
             expTranDetails:e.target.elements.expTranDetails.value,
             expVendor:e.target.elements.expVendor.value,
         }
-        console.log(expense)
         this.props.addExpense(expense)
 
     }
@@ -89,7 +88,7 @@ export class TRExpenses extends Component {
                             <div className="col-md-7">
                                 <div className="form-group">
                                     <label>Description</label>
-                                    <input type="text" className="form-control" name='expTranDetails' placeholder="Enter Transaction Details" required />
+                                    <input type="text" className="form-control" name='expTranDetails' placeholder="Enter Transaction Details" required maxlength='25'/>
                                 </div>
                             </div><div className="col-md-2">
                                 <div className="form-group">

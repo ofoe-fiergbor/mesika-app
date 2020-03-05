@@ -1,26 +1,43 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { addRevenue } from '../../Redux/Actions/RevenueTranAction'
 
 export class TRRevenue extends Component {
+
+    handleRevenueSubmit = e => {
+        e.preventDefault()
+        let sale = {
+            saleReference: Math.random().toString(36).substr(2, 5),
+            saleDate: e.target.elements.saleDate.value,
+            pmtMode: e.target.elements.pmtMode.value,
+            // saleAmount: e.target.elements.saleAmount.value,
+            saleDescription: e.target.elements.saleDescription.value,
+            saleQTY: e.target.elements.saleQTY.value,
+            customer: e.target.elements.customer.value,
+        }
+        this.props.addRevenue(sale)
+
+    }
     render() {
         return (
             <div className='right container'>
                 <h2>Add Sales Transaction</h2>
                 <hr />
                 <div className="row ">
-                    <form>
+                    <form onSubmit={this.handleRevenueSubmit}>
 
                         <div className="row">
                             <div className="col-md-1"></div>
                             <div className="col-md-3">
                                 <div className="form-group">
                                     <label>Date</label>
-                                    <input type="date" className="form-control" placeholder="Date" required />
+                                    <input type="date" className="form-control" placeholder="Date" name='saleDate' required />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-group">
                                     <label>Mode of Payment</label>
-                                    <select className="form-control" required>
+                                    <select className="form-control" name='pmtMode' required>
                                         <option>Cash Payment</option>
                                         <option>Cheque Payment</option>
                                         <option>Bank Transfer</option>
@@ -34,7 +51,7 @@ export class TRRevenue extends Component {
                             <div className="col-md-3">
                                 <div className="form-group">
                                     <label>Product</label>
-                                    <input list='products' className="form-control" required placeholder='Product Classificaiton' />
+                                    <input list='products' className="form-control" required placeholder='Product Classificaiton' name='saleDescription' />
                                     <datalist id='products'>
                                         <option>Iphone 7</option>
                                         <option>Iphone 7 Case</option>
@@ -80,13 +97,13 @@ export class TRRevenue extends Component {
                             <div className="col-md-1">
                                 <div className="form-group">
                                     <label>QTY</label>
-                                    <input type="number" className="form-control" placeholder="QTY" required  min="0" max="100000" step="1" />
+                                    <input type="number" className="form-control" placeholder="QTY" required min="0" max="100000" step="1" name='saleQTY' />
                                 </div>
                             </div>
                             <div className="col-md-5">
                                 <div className="form-group">
                                     <label>Customer Name/Other Tags</label>
-                                    <input type="text" className="form-control" placeholder="Customer Name/Other Tags" required />
+                                    <input type="text" className="form-control" placeholder="Customer Name/Other Tags" name='customer' required maxlength='10' />
                                 </div>
                             </div>
                             <div className="col-md-2"></div>
@@ -107,36 +124,27 @@ export class TRRevenue extends Component {
                                 <th>Reference</th>
                                 <th>Description</th>
                                 <th>Customer</th>
+                                <th>QTY</th>
                                 <th>Amount(GHS)</th>
                                 <th>Payment Mode</th>
                             </tr>
                         </thead>
                         <tbody >
-                            <tr>
-                                <td>Jan 1,2020</td>
-                                <td>28779</td>
-                                <td>Cement:3 Bags</td>
-                                <td>Francis Sam</td>
-                                <td>2,500.00</td>
-                                <td>Cash Payment</td>
-                            </tr>
-                            <tr>
-                                <td>Jan 1,2020</td>
-                                <td>28780</td>
-                                <td>3d Tiles:5 boxes</td>
-                                <td>Sandra Ofosu</td>
-                                <td>800.00</td>
-                                <td>Cheque Payment</td>
-                            </tr>
-                            <tr>
-                                <td>Jan 2,2020</td>
-                                <td>28781</td>
-                                <td>Roofing Sheet</td>
-                                <td>Malik Scott</td>
-                                <td>2,000.00</td>
-                                <td>Bank Payment</td>
-                            </tr>
-
+                            {
+                                this.props.sales.map(sale => {
+                                    return (
+                                        <tr key={sale.saleReference}>
+                                            <td>{sale.saleDate}</td>
+                                            <td className='id'>{sale.saleReference}</td>
+                                            <td>{sale.saleDescription}</td>
+                                            <td>{sale.customer}</td>
+                                            <td>{sale.saleQTY}</td>
+                                            <td>XXX</td>
+                                            <td>{sale.pmtMode}</td>
+                                        </tr>
+                                    )
+                                })
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -144,5 +152,10 @@ export class TRRevenue extends Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        sales: state.revenueTransaction
+    }
+}
 
-export default TRRevenue
+export default connect(mapStateToProps, { addRevenue })(TRRevenue)
