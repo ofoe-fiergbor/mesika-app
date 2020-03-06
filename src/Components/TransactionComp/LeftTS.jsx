@@ -14,7 +14,10 @@ export class LeftTS extends Component {
                         <li>Revenue</li>
                     </Link>
                     <Link to='/bankLodgment' id='leftDBLi'>
-                        <li>Bank Lodgement</li>
+                        <li>Transfers</li>
+                    </Link>
+                    <Link to='/accountBalances' id='leftDBLi'>
+                        <li>Transaction Balances</li>
                     </Link>
                     
 

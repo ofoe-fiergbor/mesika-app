@@ -32,57 +32,20 @@ export class IncomeStatement extends Component {
                                 <td className='col-md-1 text-center'><b>xxx</b></td>
                             </tr>
                             <tr>
+                                <td className='col-md-9'>Cost of Sales</td>
+                                <td className='col-md-1 text-center'>(xxx)</td>
+                            </tr>
+                            <tr>
+                                <td className='col-md-9'><b>Gross Profit</b></td>
+                                <td className='col-md-1 text-center'><b>xxx</b></td>
+                            </tr>
+                            <tr>
                                 <td className='col-md-9'><b>Payments</b></td>
                                 <td className='col-md-1 text-center'></td>
                             </tr>
+                            
                             <tr>
-                                <td className='col-md-9'>Advertising & Promotion</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Agency & Labour Cost</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Arrangement Fees & Bank Charges</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Business Rates</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Electricity</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Employee Wages</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Postage & Courier</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Repair & Maintenance-Commercial</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Repair & Maintenance-Motor Vehicle</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Rent</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Staff Welfare</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Stationery & Printing</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Telephone, Internet & Computer</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Transport & Travel</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr><tr>
-                                <td className='col-md-9'>Water</td>
-                                <td className='col-md-1 text-left'>xxx</td>
-                            </tr>
-                            <tr>
-                                <td className='col-md-9'><b>Total Payment</b></td>
+                                <td className='col-md-9'>Total Payment</td>
                                 <td className='col-md-1 text-center'><b>(xxx)</b></td>
                             </tr>
                             <tr>

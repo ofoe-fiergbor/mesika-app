@@ -4,6 +4,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import TRExpenses from './TRExpenses'
 import TRRevenue from './TRRevenue'
 import TRBankLodgment from './TRBankLodgment'
+import TRBalances from './TRBalances'
+
 
 export class TRIndex extends Component {
     render() {
@@ -17,6 +19,7 @@ export class TRIndex extends Component {
                         <Route path='/expenseTransaction' component={TRExpenses}/>
                         <Route path='/transactions' component={TRRevenue}/>
                         <Route path='/bankLodgment' component={TRBankLodgment}/>
+                        <Route path='/accountBalances' component={TRBalances}/>
                     </Switch>
 
                 </div>

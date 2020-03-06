@@ -4,7 +4,7 @@ export class TRBankLodgment extends Component {
     render() {
         return (
             <div className='right'>
-            <center><h1>Bank Lodgement</h1></center>
+            <center><h1>Transfers</h1></center>
         </div>
         )
     }
