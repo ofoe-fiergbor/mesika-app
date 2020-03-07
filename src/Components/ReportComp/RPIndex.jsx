@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import LeftRP from './LeftRP'
 import IncomeStatement from './IncomeStatement'
-import BalanceSheet from './BalanceSheet'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Chart from './Chart'
+
 
 export class RPIndex extends Component {
     render() {
@@ -14,7 +15,7 @@ export class RPIndex extends Component {
                 <div className="col-md-9">
                     <Switch>
                         <Route path='/reports' component={IncomeStatement} />
-                        <Route path='/balanceSheet' component={BalanceSheet} />
+                        <Route path='/chart' component={Chart} />
                     </Switch>
                 </div>
             </BrowserRouter>

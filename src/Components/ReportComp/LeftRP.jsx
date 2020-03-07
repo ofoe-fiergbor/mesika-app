@@ -11,8 +11,8 @@ export class LeftRP extends Component {
                     <Link to='/reports' id='leftDBLi'>
                         <li>Income Statement</li>
                     </Link>
-                    <Link to='/balanceSheet' id='leftDBLi'>
-                        <li>Balance Sheet</li>
+                    <Link to='/chart' id='leftDBLi'>
+                        <li>Charts</li>
                     </Link>
                 </ul>
             </div>

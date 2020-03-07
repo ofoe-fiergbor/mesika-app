@@ -88,7 +88,7 @@ export class TRExpenses extends Component {
                             <div className="col-md-7">
                                 <div className="form-group">
                                     <label>Description</label>
-                                    <input type="text" className="form-control" name='expTranDetails' placeholder="Enter Transaction Details" required maxlength='25'/>
+                                    <input type="text" className="form-control" name='expTranDetails' placeholder="Enter Transaction Details" required maxLength='25'/>
                                 </div>
                             </div><div className="col-md-2">
                                 <div className="form-group">

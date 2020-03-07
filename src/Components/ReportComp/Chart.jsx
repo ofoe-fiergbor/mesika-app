@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-export class BalanceSheet extends Component {
+export class Chart extends Component {
     render() {
         return (
             <div className='right'>
-                <center><h1>Balance Sheet</h1></center>
+                <center><h1>Chart</h1></center>
             </div>
         )
     }
 }
 
-export default BalanceSheet
+export default Chart

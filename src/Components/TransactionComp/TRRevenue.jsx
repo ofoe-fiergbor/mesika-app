@@ -10,9 +10,9 @@ export class TRRevenue extends Component {
             saleReference: Math.random().toString(36).substr(2, 5),
             saleDate: e.target.elements.saleDate.value,
             pmtMode: e.target.elements.pmtMode.value,
-            // saleAmount: e.target.elements.saleAmount.value,
+            saleAmount: e.target.elements.saleAmount.value,
             saleDescription: e.target.elements.saleDescription.value,
-            saleQTY: e.target.elements.saleQTY.value,
+            // saleQTY: e.target.elements.saleQTY.value,
             customer: e.target.elements.customer.value,
         }
         this.props.addRevenue(sale)
@@ -39,7 +39,7 @@ export class TRRevenue extends Component {
                                     <label>Mode of Payment</label>
                                     <select className="form-control" name='pmtMode' required>
                                         <option>Cash Payment</option>
-                                        <option>Cheque Payment</option>
+                                        <option>Mobile Money</option>
                                         <option>Bank Transfer</option>
                                     </select>
                                 </div>
@@ -53,57 +53,46 @@ export class TRRevenue extends Component {
                                     <label>Product</label>
                                     <input list='products' className="form-control" required placeholder='Product Classificaiton' name='saleDescription' />
                                     <datalist id='products'>
-                                        <option>Iphone 7</option>
-                                        <option>Iphone 7 Case</option>
-                                        <option>Iphone 7 Plus Case</option>
-                                        <option>Iphone 7 Plus</option>
-                                        <option>Iphone 11</option>
-                                        <option>Iphone 11 Case</option>
-                                        <option>Iphone 11 Pro</option>
-                                        <option>Iphone 11 Pro Case</option>
-                                        <option>Iphone 11 Pro Max</option>
-                                        <option>Iphone 11 Pro Max Case</option>
-                                        <option>Iphone 8</option>
-                                        <option>Iphone 8 Case</option>
-                                        <option>Iphone 8 Plus Case</option>
-                                        <option>Iphone X</option>
-                                        <option>Iphone X Case</option>
-                                        <option>Iphone xs</option>
-                                        <option>Iphone xs Max</option>
-                                        <option>Samsung Galaxy A30s</option>
-                                        <option>Samsung Galaxy A30s Case</option>
-                                        <option>Samsung Galaxy A50s</option>
-                                        <option>Samsung Galaxy A50s Case</option>
-                                        <option>Samsung Galaxy Fold</option>
-                                        <option>Samsung Galaxy Fold</option>
-                                        <option>Samsung Galaxy Fold Case</option>
-                                        <option>Samsung Galaxy Note 10</option>
-                                        <option>Samsung Galaxy Note 10 Case</option>
-                                        <option>Samsung Galaxy Note 10+</option>
-                                        <option>Samsung Galaxy Note 10+ Case</option>
-                                        <option>Samsung Galaxy Note 9</option>
-                                        <option>Samsung Galaxy Note 9 Case</option>
-                                        <option>Samsung Galaxy S20 Neutral</option>
-                                        <option>Samsung Galaxy S20 Neutral Case</option>
-                                        <option>Samsung Galaxy S20+</option>
-                                        <option>Samsung Galaxy S20+ Case</option>
-                                        <option>Samsung Galaxy Z Flip</option>
-                                        <option>Samsung Galaxy Z Flip Case</option>
-                                        <option>Gorilla Screen Protector</option>
-                                        <option>Nano Screen Protector</option>
+                                        <option>ESEREWURA GLYPHOSATE 20LT</option>
+                                        <option>MECTIN (ABAMECTIN) 100ML BOTTL</option>
+                                        <option>ORIZON EC IN 200ML</option>
+                                        <option>DIZ-PYRIFOS 480 EC 1 LT</option>
+                                        <option>DIZ-PYRIFOS 480 EC 250ML</option>
+                                        <option>SEED POWER 44WS 10G PACK</option>
+                                        <option>SEED POWER 44WS 1KILO PACK</option>
+                                        <option>TRIGGER10CS 100M</option>
+                                        <option>VICTORY 72WP - 1KG</option>
+                                        <option>JMS ORGANIC STYLET OIL 1LT</option>
+                                        <option>JMS ORGANIC STYLET OIL 15</option>
+                                        <option>JMS ORGANIC STYLET OIL 5LT</option>
+                                        <option>AGRI M40 FERTILIZER 1000L</option>
+                                        <option>AGRI M40 FERTILIZER 250L</option>
+                                        <option>IDROL - VEG DA AGRIC FERTILIZE</option>
+                                        <option>TECAMIN ALGAE 1LT</option>
+                                        <option>TECAMIN MAX 1L</option>
+                                        <option>TECAMIN MAX 1LT PFJ</option>
+                                        <option>TECAMIN MAX 500ML</option>
+                                        <option>TECNOKEL AMINO CAB 1LT</option>
+                                        <option>TECNOKEL AMINO FE 1LT</option>
+                                        <option>TECNOKEL AMINO MG 1LT</option>
+                                        <option>TECNOKEL AMINO MIX 1L</option>
+                                        <option>CONTROLPHYT CU 250ML</option>
+                                        <option>TECNOPHYT PH 1L</option>
+                                        <option>CONTROLPHYT PK 1L</option>
+                                        <option>CONTROLPHYT PK 20LT</option>
                                     </datalist>
                                 </div>
                             </div>
-                            <div className="col-md-1">
+                            <div className="col-md-2">
                                 <div className="form-group">
-                                    <label>QTY</label>
-                                    <input type="number" className="form-control" placeholder="QTY" required min="0" max="100000" step="1" name='saleQTY' />
+                                    <label>Amount</label>
+                                    <input type="number" className="form-control" placeholder="Amount Paid" required min="0" max="100000" step="0.01" name='saleAmount' />
                                 </div>
                             </div>
-                            <div className="col-md-5">
+                            <div className="col-md-4">
                                 <div className="form-group">
                                     <label>Customer Name/Other Tags</label>
-                                    <input type="text" className="form-control" placeholder="Customer Name/Other Tags" name='customer' required maxlength='10' />
+                                    <input type="text" className="form-control" placeholder="Customer Name/Other Tags" name='customer' required maxLength='10' />
                                 </div>
                             </div>
                             <div className="col-md-2"></div>
@@ -124,7 +113,7 @@ export class TRRevenue extends Component {
                                 <th>Reference</th>
                                 <th>Description</th>
                                 <th>Customer</th>
-                                <th>QTY</th>
+                                {/* <th>QTY</th> */}
                                 <th>Amount(GHS)</th>
                                 <th>Payment Mode</th>
                             </tr>
@@ -138,8 +127,8 @@ export class TRRevenue extends Component {
                                             <td className='id'>{sale.saleReference}</td>
                                             <td>{sale.saleDescription}</td>
                                             <td>{sale.customer}</td>
-                                            <td>{sale.saleQTY}</td>
-                                            <td>XXX</td>
+                                            {/* <td>{sale.saleQTY}</td> */}
+                                            <td >{sale.saleAmount}</td>
                                             <td>{sale.pmtMode}</td>
                                         </tr>
                                     )
