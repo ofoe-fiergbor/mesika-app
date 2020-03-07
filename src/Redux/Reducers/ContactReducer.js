@@ -1,6 +1,11 @@
 import { ADD_CONTACT, EDIT_CONTACT, REMOVE_CONTACT } from "../Actions/ContactActions";
 
-const ContactReducer = (state=20, action)=>{
+
+let initialState = [
+    {name:'James Black', phoneNumber: '0867546789', email:'ofoefierbor16@gmail.com', id:'XHGT'}
+]
+
+const ContactReducer = (state=initialState, action)=>{
     switch(action.type){
         case ADD_CONTACT:
             return [...state, action.payload]
