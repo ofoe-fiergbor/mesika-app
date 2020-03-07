@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {addContact} from '../Redux/Actions/ContactActions'
+import {addContact, removeContact} from '../Redux/Actions/ContactActions'
 import { connect } from 'react-redux'
 
 
@@ -16,6 +16,9 @@ export class Contacts extends Component {
         }
         this.props.addContact(contact)
 
+    }
+    deleteContact = id =>{
+        this.props.removeContact(id)
     }
 
     render() {
@@ -75,7 +78,7 @@ export class Contacts extends Component {
                                     <td>{contact.phoneNumber}</td>
                                     <td>{contact.email}</td>
                                     <td>{contact.address}</td>
-                                    <td><button>Edit</button><button>Delete</button></td>
+                                    <td><button>Edit</button>     <button onClick={()=>this.deleteContact(contact.id)}>Delete</button></td>
                                 </tr>
                                 )
                             })
@@ -94,4 +97,4 @@ const mapStateToProps = state =>{
     }
 }
 
-export default connect(mapStateToProps,{addContact})(Contacts)
+export default connect(mapStateToProps,{addContact, removeContact})(Contacts)

@@ -13,7 +13,11 @@ const ContactReducer = (state=initialState, action)=>{
         case EDIT_CONTACT:
             return console.log('edit activated')
         case REMOVE_CONTACT:
-            return console.log('contact removed')
+            let contact = state.filter(item => {
+                return item.id !== action.id
+            })
+            return contact;
+
         default:
             return state
     }
