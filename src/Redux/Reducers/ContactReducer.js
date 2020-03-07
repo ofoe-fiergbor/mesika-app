@@ -2,7 +2,8 @@ import { ADD_CONTACT, EDIT_CONTACT, REMOVE_CONTACT } from "../Actions/ContactAct
 
 
 let initialState = [
-    {name:'James Black', phoneNumber: '0867546789', email:'ofoefierbor16@gmail.com', id:'XHGT'}
+    {name:'James Black', phoneNumber: '0867546789', email:'ofoefierbor16@gmail.com', address:'jiji jijj', id:'XHGT'},
+    {name:'James Black', phoneNumber: '0867546789', email:'ofoefierbor16@gmail.com',address:'jiji jijj' , id:'XHhT'},
 ]
 
 const ContactReducer = (state=initialState, action)=>{

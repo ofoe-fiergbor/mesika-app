@@ -1,6 +1,23 @@
 import React, { Component } from 'react'
+import {addContact} from '../Redux/Actions/ContactActions'
+import { connect } from 'react-redux'
+
 
 export class Contacts extends Component {
+
+    addContact = e => {
+        e.preventDefault()
+        let contact = {
+            id: Math.random().toString(36).substr(2, 5),
+            name: e.target.elements.name.value,
+            phoneNumber: e.target.elements.phoneNumber.value,
+            email: e.target.elements.email.value,
+            address: e.target.elements.address.value,
+        }
+        this.props.addContact(contact)
+
+    }
+
     render() {
         return (
             <div className='contacts'>
@@ -9,28 +26,28 @@ export class Contacts extends Component {
                     <div className="col-md-3"></div>
                     <div className="col-md-6">
                         <div>
-                            <form>
+                            <form onSubmit={this.addContact}>
                                 <div className="form-group">
                                     <label>Full Name</label>
-                                    <input type="text" className="form-control" placeholder="Enter Full Name" required />
+                                    <input type="text" className="form-control" placeholder="Enter Full Name" name='name' required />
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6">
                                         <div className="form-group">
                                             <label>Phone Number</label>
-                                            <input type="phone" className="form-control" placeholder="Enter Phone Number" required />
+                                            <input type="phone" className="form-control" placeholder="Enter Phone Number" name='phoneNumber' required />
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="form-group">
                                             <label>Email</label>
-                                            <input type="emal" className="form-control" placeholder="Enter Email" />
+                                            <input type="email" className="form-control" placeholder="Enter Email" name='email' />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="form-group">
                                     <label>Address</label>
-                                    <input type="text" className="form-control" placeholder="Enter Address" />
+                                    <input type="text" className="form-control" name='address' placeholder="Enter Address" />
                                 </div>
                                 <button type="submit" className="btn btn-default">Add Contact</button>
                             </form>
@@ -50,31 +67,31 @@ export class Contacts extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>James Bond</td>
-                            <td>038736362</td>
-                            <td>Email@gmail.com</td>
-                            <td>Nyanyra st. Accra-North</td>
-                            <td><button>Edit</button><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>James Bond</td>
-                            <td>038736362</td>
-                            <td>Email@gmail.com</td>
-                            <td>Nyanyra st. Accra-North</td>
-                            <td><button>Edit</button><button>Delete</button></td>
-                        </tr><tr>
-                            <td>James Bond</td>
-                            <td>038736362</td>
-                            <td>Email@gmail.com</td>
-                            <td>Nyanyra st. Accra-North</td>
-                            <td><button>Edit</button><button>Delete</button></td>
-                        </tr>
+                        {
+                            this.props.contacts.map(contact=>{
+                                return(
+                                    <tr key={contact.id}>
+                                    <td>{contact.name}</td>
+                                    <td>{contact.phoneNumber}</td>
+                                    <td>{contact.email}</td>
+                                    <td>{contact.address}</td>
+                                    <td><button>Edit</button><button>Delete</button></td>
+                                </tr>
+                                )
+                            })
+                        }
+
+                   
                     </tbody>
                 </table>
             </div>
         )
     }
 }
+const mapStateToProps = state =>{
+    return{
+        contacts : state.contacts
+    }
+}
 
-export default Contacts
+export default connect(mapStateToProps,{addContact})(Contacts)
