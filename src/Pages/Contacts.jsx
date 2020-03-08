@@ -78,7 +78,7 @@ export class Contacts extends Component {
                                     <td>{contact.phoneNumber}</td>
                                     <td>{contact.email}</td>
                                     <td>{contact.address}</td>
-                                    <td><button>Edit</button>     <button onClick={()=>this.deleteContact(contact.id)}>Delete</button></td>
+                                    <td><button onClick={()=>this.deleteContact(contact.id)}>Delete</button></td>
                                 </tr>
                                 )
                             })
