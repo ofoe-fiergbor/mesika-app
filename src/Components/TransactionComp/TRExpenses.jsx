@@ -40,8 +40,8 @@ export class TRExpenses extends Component {
                                     <label>Mode of Payment</label>
                                     <select className="form-control" name='paymentMode' required>
                                         <option>Cash-In-Hand</option>
-                                        <option>Cheque Payment</option>
-                                        <option>Bank Transfer</option>
+                                        <option>Cheque/Bank Transfer Payment</option>
+                                        <option>Mobile Money</option>
                                     </select>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ export class TRExpenses extends Component {
                                         <option>Advertising & Promotion</option>
                                         <option>Agency & Labour Cost</option>
                                         <option>Arrangement Fees & Bank Charges</option>
-                                        <option>Business Rates</option>
+                                        <option>Business Rates, Fees & Licensing</option>
                                         <option>Electricity</option>
                                         <option>Employee Wages</option>
                                         <option>Fuel Cost</option>

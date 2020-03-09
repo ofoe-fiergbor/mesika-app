@@ -1,11 +1,13 @@
 import {ADD_EXPENSE} from '../Actions/ExpenseTranAction'
 
 const initialState=[
-    {expDate: 'Jan 16, 2020', id: 87867, expTranDetails: 'Transport to bank', expCategory:'Advertising & Promotion', paymentMode:'Cash-In-Hand', expAmount: 20.00, expVendor:'uber'},
-    {expDate: 'Jan 18, 2020', id: 85677, expTranDetails: 'Electricity Prepaid', expCategory:'Advertising & Promotion',  paymentMode:'Cheque Payment', expAmount: 300.00, expVendor:'PDS'},
-    {expDate: 'Jan 6, 2020', id: 87657, expTranDetails: 'Courier to Customer at kumasi', expCategory:'Transport & Travel', paymentMode:'Cash-In-Hand', expAmount: 20.00, expVendor:'VIP Courier'},
-    {expDate: 'Jan 20, 2020', id: 87767, expTranDetails: 'New Note fullscap book', expCategory:'Stationery & Printing' ,  paymentMode:'Cash-In-Hand', expAmount: 7.00, expVendor:'EPP Book Shop'},
-    {expDate: 'Jan 22, 2020', id: 89867, expTranDetails: 'Transport to bank', expCategory:'Transport & Travel', paymentMode:'Cash-In-Hand', expAmount: 20.00, expVendor:'Uber'}
+    {id: "klnlo", expDate: "2020-03-06", paymentMode: "Cash-In-Hand", expAmount: "100", expCategory: "Advertising & Promotion", expTranDetails: 'Transport to bank', expVendor:'Uber'},
+    {id: "klnfo", expDate: "2020-03-06", paymentMode: "Cheque/Bank Transfer Payment", expAmount: "200", expCategory: "Agency & Labour Cost", expTranDetails: 'Transport to bank', expVendor:'Uber'},
+    {id: "klngo", expDate: "2020-03-06", paymentMode: "Mobile Money", expAmount: "300", expCategory: "Arrangement Fees & Bank Charges", expTranDetails: 'Transport to bank', expVendor:'Uber'},
+    {id: "klngo", expDate: "2020-03-06", paymentMode: "Mobile Money", expAmount: "100", expCategory: "Business Rates, Fees & Licensing", expTranDetails: 'Transport to bank', expVendor:'Uber'},
+    {id: "klngo", expDate: "2020-03-06", paymentMode: "Mobile Money", expAmount: "140", expCategory: "Electricity", expTranDetails: 'Transport to bank', expVendor:'Uber'},
+    {id: "klngo", expDate: "2020-03-06", paymentMode: "Mobile Money", expAmount: "500", expCategory: "Employee Wages", expTranDetails: 'Transport to bank', expVendor:'Uber'},
+    {id: "klngo", expDate: "2020-03-06", paymentMode: "Mobile Money", expAmount: "500", expCategory: "Postage & Courier", expTranDetails: 'Transport to bank', expVendor:'Uber'},
 ]
 
 
