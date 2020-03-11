@@ -92,7 +92,7 @@ export class TRRevenue extends Component {
                             <div className="col-md-4">
                                 <div className="form-group">
                                     <label>Customer Name/Other Tags</label>
-                                    <input type="text" className="form-control" placeholder="Customer Name/Other Tags" name='customer' required maxLength='10' />
+                                    <input type="text" className="form-control" placeholder="Customer Name/Other Tags" name='customer' required maxLength='25' />
                                 </div>
                             </div>
                             <div className="col-md-2"></div>

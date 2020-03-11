@@ -11,6 +11,7 @@ export class DBIndex extends Component {
         var revArr = this.props.revenueTransaction
         var expArr = this.props.expenseTransaction
         // console.log(expArr)
+        console.log(revArr);
 
 
         var cashPmt = 0;
