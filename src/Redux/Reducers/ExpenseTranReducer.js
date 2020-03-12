@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 import { ADD_EXPENSE } from '../Actions/ExpenseTranAction'
 
 const initialState = [

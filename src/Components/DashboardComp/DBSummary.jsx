@@ -2,25 +2,51 @@ import React, { Component } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 
-const data = [
-    {name: 'Page A', uv: 4000, pv: 2400, amt: 2400,},
-    {name: 'Page B', uv: 3000, pv: 1398, amt: 2210,},
-    {name: 'Page C', uv: 2000, pv: 9800, amt: 2290,},
-    {name: 'Page D', uv: 2780, pv: 3908, amt: 2000,},
-    {name: 'Page E', uv: 1890, pv: 4800, amt: 2181,},
-    {name: 'Page F', uv: 2390, pv: 3800, amt: 2500,},
-    {name: 'Page G', uv: 3490, pv: 4300, amt: 2100,},
-];
+
 
 export class DBSummary extends Component {
 
-
-
-
-
     render(props) {
         const { netCashBalance, netBankBalance, netMobileMoneyBalance, totalBalance } = this.props
-
+        
+        const cashData = [
+            {name: '2020-01-2', uv: 2620,},
+            {name: '2020-01-9', uv: 5240,},
+            {name: '2020-01-16', uv: 3930,},
+            {name: '2020-01-23', uv: 5240,},
+            {name: '2020-01-30', uv: 6550,},
+            {name: '2020-02-06', uv: 786,},
+            {name: '2020-02-11', uv: 1834,},
+        ];
+        const bankData = [
+            {name: '2020-01-2', uv: 1633,},
+            {name: '2020-01-9', uv: 3812,},
+            {name: '2020-01-16', uv: 5446,},
+            {name: '2020-01-23', uv: 8169,},
+            {name: '2020-01-30', uv: 10892,},
+            {name: '2020-02-06', uv: 10892,},
+            {name: '2020-02-11', uv: 13615,},
+        ];
+        const mmData = [
+            {name: '2020-01-2', uv: 2534,},
+            {name: '2020-01-9', uv: 3620,},
+            {name: '2020-02-11', uv: 1086,},
+            {name: '2020-01-16', uv: 7240,},
+            {name: '2020-01-23', uv: 9050,},
+            {name: '2020-01-30', uv: 5430,},
+            {name: '2020-02-06', uv: 7240,},
+            
+        ];
+        const netData = [
+            {name: '2020-01-2', uv: 5867,},
+            {name: '2020-01-9', uv: 13691,},
+            {name: '2020-01-30', uv: 39117,},
+            {name: '2020-01-30', uv: 39117,},
+            {name: '2020-01-16', uv: 19559,},
+            {name: '2020-01-23', uv: 29338,},
+            {name: '2020-02-06', uv: 48897,},
+        ]
+        
 
         return (
             <div className='right'>
@@ -64,7 +90,7 @@ export class DBSummary extends Component {
                             <AreaChart
                                 width={700}
                                 height={400}
-                                data={data}
+                                data={cashData}
                                 margin={{
                                     top: 10, right: 30, left: 0, bottom: 0,
                                 }}
@@ -80,7 +106,7 @@ export class DBSummary extends Component {
                         <AreaChart
                                 width={700}
                                 height={400}
-                                data={data}
+                                data={bankData}
                                 margin={{
                                     top: 10, right: 30, left: 0, bottom: 0,
                                 }}
@@ -96,7 +122,7 @@ export class DBSummary extends Component {
                         <AreaChart
                                 width={700}
                                 height={400}
-                                data={data}
+                                data={mmData}
                                 margin={{
                                     top: 10, right: 30, left: 0, bottom: 0,
                                 }}
@@ -112,7 +138,7 @@ export class DBSummary extends Component {
                         <AreaChart
                                 width={700}
                                 height={400}
-                                data={data}
+                                data={netData}
                                 margin={{
                                     top: 10, right: 30, left: 0, bottom: 0,
                                 }}

@@ -11,15 +11,17 @@ export class DBIndex extends Component {
         var revArr = this.props.revenueTransaction
         var expArr = this.props.expenseTransaction
         // console.log(expArr)
-        console.log(revArr);
+        // console.log(revArr);
 
 
         var cashPmt = 0;
         var mobileMoney = 0;
         var bankTransfer = 0;
+
         for (var i =0; i<revArr.length; i++) {
             if (revArr[i].pmtMode=== 'Cash Payment') {
                 cashPmt += parseFloat(revArr[i].saleAmount)
+               
             }else if (revArr[i].pmtMode ==='Mobile Money') {
                 mobileMoney += parseFloat(revArr[i].saleAmount)
             }else{
@@ -38,6 +40,7 @@ export class DBIndex extends Component {
                 expBankTransfer += parseFloat(expArr[e].expAmount)
             }
         }
+
 
         const netCashBalance = cashPmt - expCashPmt;
         const netMobileMoneyBalance = mobileMoney - expMobileMoney;

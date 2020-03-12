@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 
 
@@ -7,18 +6,8 @@ export class IncomeStatement extends Component {
 
 
 
-    render() {
-        const totalSales = this.props.revenueTransaction.reduce((total, sale)=>{
-            return total + parseFloat(sale.saleAmount)
-        }, 0)
-        const cos = 98760
-        const totalExpense = this.props.expenseTransaction.reduce((total, expense) => {
-            return total + parseFloat(expense.expAmount)
-        }, 0)
-        
-        const grossProfit = totalSales - cos
-        const netReceipt = grossProfit - totalExpense
-
+    render(props) {
+        const {totalExpense, totalSales, cos, netReceipt, grossProfit} = this.props
         return (
             <div>
                 <div className='right'>
@@ -79,12 +68,6 @@ export class IncomeStatement extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    const { expenseTransaction, revenueTransaction } = state
-    return {
-        expenseTransaction,
-        revenueTransaction
-}
-}
 
-export default connect(mapStateToProps, null)(IncomeStatement)
+
+export default IncomeStatement
