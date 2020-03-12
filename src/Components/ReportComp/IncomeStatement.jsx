@@ -11,7 +11,7 @@ export class IncomeStatement extends Component {
         const totalSales = this.props.revenueTransaction.reduce((total, sale)=>{
             return total + parseFloat(sale.saleAmount)
         }, 0)
-        const cos = 500
+        const cos = 98760
         const totalExpense = this.props.expenseTransaction.reduce((total, expense) => {
             return total + parseFloat(expense.expAmount)
         }, 0)
