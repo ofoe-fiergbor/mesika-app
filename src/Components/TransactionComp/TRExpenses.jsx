@@ -18,9 +18,11 @@ export class TRExpenses extends Component {
             expVendor:e.target.elements.expVendor.value,
         }
         this.props.addExpense(expense)
-
     }
+    
     render() {
+        const formatter = new Intl.NumberFormat('en-US', {minimumFractionDigits: 2})
+
         return (
             <div className='right container'>
                 <h2>Add Expenses</h2>
@@ -129,7 +131,7 @@ export class TRExpenses extends Component {
                                             <td>{expense.expVendor}</td>
                                             <td>{expense.expCategory}</td>
                                             <td>{expense.paymentMode}</td>
-                                            <td className='text-center'>{expense.expAmount}</td>
+                                            <td className='text-center'>{formatter.format(expense.expAmount)}</td>
                                         </tr>
                                     )
                                 })

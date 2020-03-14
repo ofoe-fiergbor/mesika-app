@@ -19,7 +19,9 @@ export class TRRevenue extends Component {
 
     }
     render() {
+        const formatter = new Intl.NumberFormat('en-US', {minimumFractionDigits: 2})
         return (
+            
             <div className='right container'>
                 <h2>Add Sales Transaction</h2>
                 <hr />
@@ -128,7 +130,7 @@ export class TRRevenue extends Component {
                                             <td>{sale.saleDescription}</td>
                                             <td>{sale.customer}</td>
                                             {/* <td>{sale.saleQTY}</td> */}
-                                            <td >{sale.saleAmount}</td>
+                                            <td >{formatter.format(sale.saleAmount)}</td>
                                             <td>{sale.pmtMode}</td>
                                         </tr>
                                     )

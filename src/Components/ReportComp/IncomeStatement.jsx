@@ -8,6 +8,8 @@ export class IncomeStatement extends Component {
 
     render(props) {
         const {totalExpense, totalSales, cos, netReceipt, grossProfit} = this.props
+
+        const formatter = new Intl.NumberFormat('en-US', {minimumFractionDigits: 2})
         return (
             <div>
                 <div className='right'>
@@ -16,7 +18,7 @@ export class IncomeStatement extends Component {
                         <thead>
                             <tr>
                                 <th className='col-md-9'>DESCRIPTION</th>
-                                <th className='col-md-3 text-center'>AMOUNT(GHS'000)</th>
+                                <th className='col-md-3 text-center'>AMOUNT (GHS)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,20 +29,20 @@ export class IncomeStatement extends Component {
                             </tr>
                             <tr>
                                 <td className='col-md-9'>Receipts</td>
-                                <td className='col-md-1 text-center'>{totalSales}</td>
+                                <td className='col-md-1 text-center'>{formatter.format(totalSales)}</td>
                             </tr>
                            
                             <tr>
                                 <td className='col-md-9'><b>Total Receipts</b></td>
-                                <td className='col-md-1 text-center'><b>{totalSales}</b></td>
+                                <td className='col-md-1 text-center'><b>{formatter.format(totalSales)}</b></td>
                             </tr>
                             <tr>
                                 <td className='col-md-9'>Cost of Sales</td>
-                                <td className='col-md-1 text-center'>{cos}</td>
+                                <td className='col-md-1 text-center'>({formatter.format(cos)})</td>
                             </tr>
                             <tr>
                                 <td className='col-md-9'><b>Gross Profit</b></td>
-                                <td className='col-md-1 text-center'><b>{grossProfit}</b></td>
+                                <td className='col-md-1 text-center'><b>{formatter.format(grossProfit)}</b></td>
                             </tr>
                             <tr>
                                 <td className='col-md-9'><b>Payments</b></td>
@@ -50,12 +52,12 @@ export class IncomeStatement extends Component {
                             <tr>
                                 <td className='col-md-9'>Total Payment</td>
                                 <td className='col-md-1 text-center'>
-                                    {totalExpense}
+                                    ({formatter.format(totalExpense)})
                                 </td>
                             </tr>
                             <tr>
                                 <td className='col-md-9'><b>Net Receipt</b></td>
-                                <td className='col-md-1 text-center'><b>{netReceipt}</b></td>
+                                <td className='col-md-1 text-center'><b>{formatter.format(netReceipt)}</b></td>
                             </tr>
 
 

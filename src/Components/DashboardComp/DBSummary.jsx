@@ -8,6 +8,8 @@ export class DBSummary extends Component {
 
     render(props) {
         const { netCashBalance, netBankBalance, netMobileMoneyBalance, totalBalance } = this.props
+        const formatter = new Intl.NumberFormat('en-US', {minimumFractionDigits: 2})
+
         
         const cashData = [
             {name: '2020-01-2', uv: 2620,},
@@ -57,21 +59,21 @@ export class DBSummary extends Component {
                         <thead>
                             <tr>
                                 <th>Balance</th>
-                                <th>{totalBalance}</th>
+                                <th>{formatter.format(totalBalance)}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td className='col-md-10'>Cash-In-Hand</td>
-                                <td className='col-md-2'>{netBankBalance}</td>
+                                <td className='col-md-2'>{formatter.format(netBankBalance)}</td>
                             </tr>
                             <tr>
                                 <td className='col-md-10'>Cash In Bank</td>
-                                <td className='col-md-2'>{netMobileMoneyBalance}</td>
+                                <td className='col-md-2'>{formatter.format(netMobileMoneyBalance)}</td>
                             </tr>
                             <tr>
                                 <td className='col-md-10'>Mobile Money</td>
-                                <td className='col-md-2'>{netCashBalance}</td>
+                                <td className='col-md-2'>{formatter.format(netCashBalance)}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -147,7 +149,7 @@ export class DBSummary extends Component {
                                 <XAxis dataKey="name" />
                                 <YAxis />
                                 <Tooltip />
-                                <Area type="monotone" dataKey="uv" stroke="#D87575" fill="#D87575" />
+                                <Area type="monotone" dataKey="uv" stroke="#D87575" fill='#008000' />
                             </AreaChart>
                         </div>
                     </div>
