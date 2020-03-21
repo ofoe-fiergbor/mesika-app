@@ -9,7 +9,7 @@ let initialState = [
 const ContactReducer = (state=initialState, action)=>{
     switch(action.type){
         case ADD_CONTACT:
-            return [...state, action.payload]
+            return [action.payload,...state]
         case EDIT_CONTACT:
             return console.log('edit activated')
         case REMOVE_CONTACT:

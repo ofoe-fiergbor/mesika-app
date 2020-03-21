@@ -296,7 +296,7 @@ const initialState = [
 function ExpenseTranReducer(state = initialState, action) {
     switch (action.type) {
         case ADD_EXPENSE:
-            return [...state, action.payload]
+            return [action.payload,...state]
         default:
             return state
     }

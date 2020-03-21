@@ -294,7 +294,7 @@ const RevTranReducer =(state = initialState, action)=>{
         case ADD_REVENUE:
             
             return (
-                [...state, action.payload]
+                [action.payload,...state]
                 )
     default:
         return state
