@@ -2,13 +2,6 @@
 import { ADD_EXPENSE } from '../Actions/ExpenseTranAction'
 
 const initialState = [
-    { id: "klnlo", expDate: "2020-03-06", paymentMode: "Cash-In-Hand", expAmount: "100", expCategory: "Advertising & Promotion", expTranDetails: 'Transport to bank', expVendor: 'Uber' },
-    { id: "klnfo", expDate: "2020-03-06", paymentMode: "Cheque/Bank Transfer Payment", expAmount: "200", expCategory: "Agency & Labour Cost", expTranDetails: 'Transport to bank', expVendor: 'Uber' },
-    { id: "klngo", expDate: "2020-03-06", paymentMode: "Mobile Money", expAmount: "300", expCategory: "Arrangement Fees & Bank Charges", expTranDetails: 'Transport to bank', expVendor: 'Uber' },
-    { id: "klngo", expDate: "2020-03-06", paymentMode: "Mobile Money", expAmount: "100", expCategory: "Business Rates, Fees & Licensing", expTranDetails: 'Transport to bank', expVendor: 'Uber' },
-    { id: "klngo", expDate: "2020-03-06", paymentMode: "Mobile Money", expAmount: "140", expCategory: "Electricity", expTranDetails: 'Transport to bank', expVendor: 'Uber' },
-    { id: "klngo", expDate: "2020-03-06", paymentMode: "Mobile Money", expAmount: "500", expCategory: "Employee Wages", expTranDetails: 'Transport to bank', expVendor: 'Uber' },
-    { id: "klngo", expDate: "2020-03-06", paymentMode: "Mobile Money", expAmount: "500", expCategory: "Postage & Courier", expTranDetails: 'Transport to bank', expVendor: 'Uber' },
     { id: "41RUS", expDate: "2020-01-02", paymentMode: "Cash-In-Hand", expAmount: "500", expCategory: "Electricity", expTranDetails: "Prepaid Electricity", expVendor: "Prepaid Electricity", expVendor: "Olga Navarro" },
     { id: "KKP3T", expDate: "2020-01-02", paymentMode: "Cash-In-Hand", expAmount: "200", expCategory: "Telephone, Internet & Computer", expTranDetails: "Post Paid Telephone bill", expVendor: "Post Paid Telephone bill", expVendor: "Illana Parker" },
     { id: "82B5Q", expDate: "2020-01-02", paymentMode: "Cash-In-Hand", expAmount: "277", expCategory: "Repair & Maintenance-Commercial", expTranDetails: "Electrical repairs", expVendor: "Electrical repairs", expVendor: "Emily Buchanan" },

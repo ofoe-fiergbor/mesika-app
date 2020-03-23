@@ -3,7 +3,14 @@ import { connect } from 'react-redux'
 import { addRevenue } from '../../Redux/Actions/RevenueTranAction'
 
 export class TRRevenue extends Component {
-
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            currentPage: 1,
+            salePerPage: 10
+        }
+    }
     handleRevenueSubmit = e => {
         e.preventDefault()
         let sale = {
@@ -18,8 +25,34 @@ export class TRRevenue extends Component {
         this.props.addRevenue(sale)
 
     }
+    handleClick=(event)=>{
+        this.setState({
+          currentPage: Number(event.target.id)
+        });
+      }
     render() {
         const formatter = new Intl.NumberFormat('en-US', {minimumFractionDigits: 2})
+        const { currentPage, salePerPage } = this.state;
+
+        // Logic for displaying current todos
+        const indexOfLastSaleTransaction = currentPage * salePerPage;
+        const indexOfFirstSaleTransaction = indexOfLastSaleTransaction - salePerPage;
+        const currentSale = this.props.sales.slice(indexOfFirstSaleTransaction, indexOfLastSaleTransaction);
+
+
+        // Logic for displaying page numbers
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(this.props.sales.length / salePerPage); i++) {
+          pageNumbers.push(i);
+        }
+
+        const renderPageNumbers = pageNumbers.map(number => {
+          return (
+            <li key={number} id={number} onClick={this.handleClick}> {number}</li>
+          );
+        });
+
+
         return (
             
             <div className='right container'>
@@ -122,7 +155,7 @@ export class TRRevenue extends Component {
                         </thead>
                         <tbody >
                             {
-                                this.props.sales.map(sale => {
+                                currentSale.map(sale => {
                                     return (
                                         <tr key={sale.saleReference}>
                                             <td>{sale.saleDate}</td>
@@ -138,6 +171,9 @@ export class TRRevenue extends Component {
                             }
                         </tbody>
                     </table>
+                    <div className="row text-center" id='page-numbers'>
+                        {renderPageNumbers}
+                    </div>
                 </div>
             </div>
         )

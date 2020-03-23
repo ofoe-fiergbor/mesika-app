@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import LeftDB from './LeftDB'
-import DBExpenses from './DBExpenses'
-import DBRevenue from './DBRevenue'
+// import DBExpenses from './DBExpenses'
+// import DBRevenue from './DBRevenue'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import DBSummary from './DBSummary'
 import {connect} from 'react-redux'
@@ -62,8 +62,8 @@ export class DBIndex extends Component {
                                 netBankBalance={netBankBalance} 
                                 totalBalance={totalBalance}/>
                             }/>
-                            <Route path='/dbexpense'  component={DBExpenses}/>
-                            <Route path='/dbrevenue'  component={DBRevenue}/>
+                            {/* <Route path='/dbexpense'  component={DBExpenses}/>
+                            <Route path='/dbrevenue'  component={DBRevenue}/> */}
                         </Switch>
                     </div>
                 </div>

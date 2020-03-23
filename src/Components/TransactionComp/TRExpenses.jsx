@@ -5,6 +5,17 @@ import {addExpense} from '../../Redux/Actions/ExpenseTranAction'
 
 
 export class TRExpenses extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            currentPage: 1,
+            expensesPerPage: 10,
+        }
+    }
+    updateFiltrar=(e)=>{
+        this.setState({ filtrar: e.target.value.substr(0,20)  });
+    }
 
     handleAddExpense= e =>{
         e.preventDefault()
@@ -19,9 +30,33 @@ export class TRExpenses extends Component {
         }
         this.props.addExpense(expense)
     }
-    
+    handleClick=(event)=>{
+        this.setState({
+          currentPage: Number(event.target.id)
+        });
+      }
     render() {
         const formatter = new Intl.NumberFormat('en-US', {minimumFractionDigits: 2})
+
+        const { currentPage, expensesPerPage } = this.state;
+
+        // Logic for displaying current todos
+        const indexOfLastExpTransaction = currentPage * expensesPerPage;
+        const indexOfFirstExpTransaction = indexOfLastExpTransaction - expensesPerPage;
+        const currentExpenses = this.props.expenses.slice(indexOfFirstExpTransaction, indexOfLastExpTransaction);
+
+
+        // Logic for displaying page numbers
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(this.props.expenses.length / expensesPerPage); i++) {
+          pageNumbers.push(i);
+        }
+
+        const renderPageNumbers = pageNumbers.map(number => {
+          return (
+            <li key={number} id={number} onClick={this.handleClick}> {number}</li>
+          );
+        });
 
         return (
             <div className='right container'>
@@ -122,7 +157,7 @@ export class TRExpenses extends Component {
                         </thead>
                         <tbody >
                             {
-                                this.props.expenses.map(expense=> {
+                                currentExpenses.map(expense=> {
                                     return (
                                         <tr key={expense.id}>
                                             <td>{expense.expDate}</td>
@@ -139,6 +174,9 @@ export class TRExpenses extends Component {
 
                         </tbody>
                     </table>
+                    <div className="row text-center" id='page-numbers'>
+                        {renderPageNumbers}
+                    </div>
                 </div>
             </div>
         )

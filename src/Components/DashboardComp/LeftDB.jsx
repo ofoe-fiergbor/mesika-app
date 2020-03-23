@@ -12,14 +12,14 @@ export class LeftDB extends Component {
                         <li>Summary</li>
                     </Link>
 
-                    <Link to='/dbexpense' id='leftDBLi'>
+                    {/* <Link to='/dbexpense' id='leftDBLi'>
                         <li>Expenses</li>
                     </Link>
 
                     <Link to='/dbrevenue' id='leftDBLi'>
                         <li>Revenue</li>
                     </Link>
-                    
+                     */}
 
                 </ul>
             </div>
