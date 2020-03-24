@@ -40,7 +40,7 @@ export class TRExpenses extends Component {
 
         const { currentPage, expensesPerPage } = this.state;
 
-        // Logic for displaying current todos
+        // Logic for displaying current expTransactions
         const indexOfLastExpTransaction = currentPage * expensesPerPage;
         const indexOfFirstExpTransaction = indexOfLastExpTransaction - expensesPerPage;
         const currentExpenses = this.props.expenses.slice(indexOfFirstExpTransaction, indexOfLastExpTransaction);
