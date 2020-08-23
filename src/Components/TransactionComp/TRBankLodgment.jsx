@@ -4,7 +4,9 @@ export class TRBankLodgment extends Component {
     render() {
         return (
             <div className='right'>
-            <center><h1>Transfers</h1></center>
+            <div style={{display:'flex', justifyContent:'center', alignItems:'center', height:'70vh'}}>
+                <h3>This Feature is currently unavailable</h3>
+            </div>
         </div>
         )
     }

@@ -35,7 +35,7 @@ export default class Example extends PureComponent {
         return (
             <div className="right">
                 <AreaChart
-                    width={1150}
+                    width={1100}
                     height={600}
                     data={data}
                     margin={{
